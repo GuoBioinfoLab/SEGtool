@@ -16,15 +16,15 @@ SEGtool is an R package with self-adaptive function and high accuracy for specif
 2. Specific expression patterns detection.
 3. Detect extreme values in numeric-scale format.
 
+## Procedures
+
+- Specific Expression Patterns Detection, using a Tukey-biweight modified fuzzy C-mean(FCM) clustering algorithm method.
+- Principle Component Analysis (PCA) for the samples with SEGs.
+- Cluster analysis for genes and samples.
+- Represent SEGs in different samples.
+- Plotting all the analysis results.
+- Generate html report.
+
 ## System requirement
 
 This package can be used in UNIX/LINUX and was developed under R 3.1.1 on the ubuntu 12.04 operating system. The package on WINDOWS OS could not call multi-core cpu for speeding , and only perform on single core. The memory occupation depends on the sample size of the input datasets. 336M RAM and 4min were taken in an E7-4820 computer using 4 Cores while handling 39 tissues that all of them have 60533 genes (EBI test dataset, each cell is float with 4 significant figures). SEGtool used 336M RAM and 8min to complete the SEG analysis using default parameters on GTEx dataset (56238 genes in 53 tissues). Because of the time consumings, default option will not draw plot figure for each SEG's expression (or this it will spend a long time). In order to implement our package, the R software and following R packages including : ggplot2 (single gene expression plot figure needed) hwriterPlus ( UNIX/LINUX html report needed ) parallel ( R contributed packages,UNIX/LINUX platform run multi-cpu required ) pheatmap ( heatmap needed) svglite ( html report needed ) All the packages required can be downloaded from CRAN or BIoconductor or click the hyperlinks above.
-
-## Procedures
-
-- Specific Expression Patterns Detection, using a Tukey-biweight modified fuzzy C-mean(FCM) clustering algorithm method
-- Principle Component Analysis (PCA) for the samples with SEGs
-- Cluster analysis for genes and samples
-- Represent SEGs in different samples
-- Plotting all the analysis results
-- Generate html report
