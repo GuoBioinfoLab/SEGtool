@@ -48,3 +48,13 @@ ll
 cd ./
 l
 git ss
+git add -A
+git cm "add SEGtool to the repos"
+git push origin master
+git ss
+git rm .command
+ls
+ll
+git ss
+git reset .command
+git ss
