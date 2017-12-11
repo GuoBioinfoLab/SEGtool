@@ -1,0 +1,122 @@
+﻿html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, code, em, img, q, small, strong, li, ol, ul, fieldset, form, label, table, tbody, tr, th, td, input {
+	margin:0px;
+	border:0px;
+	padding:0px;}
+	
+body{
+	font-family:Tahoma,Helvetica,Simsun,STHeiti,
+	Georgia,"Lucida Grande", Verdana, Lucida,Arial, Helvetica, sans-serif;
+	background-color:white;
+	cursor:default;
+	position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 8px 8px 8px #000;
+	font-family: Georgia, Verdana, Lucida,Arial, Helvetica,Times, serif;
+}
+p, div {
+	font-size:24px;
+	font-family: Georgia, Verdana, Lucida,Arial, Helvetica, Arial, sans-serif;
+	color:black;
+}
+p{
+	text-indent: 50px;
+	margin-top:10px;
+}
+
+a{
+	transition-duration:0.4s;
+	transition-property:color;
+	transition-timing-function:ease-out;
+	-o-transition-duration:0.4s;
+	-o-transition-property:color;
+	-o-transition-timing-function:ease-out;
+	-webkit-transition-duration:0.4s;
+	-webkit-transition-property: color, background-color;
+	-webkit-transition-timing-function:ease-out;
+	-moz-transition-duration:0.4s;
+	-moz-transition-property:color;
+	-moz-transition-timing-function:ease-out;
+	-ms-transition-duration:0.4s;
+	-ms-transition-property:color;
+	-ms-transition-timing-function:ease-out;
+	color:#000;
+}
+ a:link{
+	text-decoration:none;
+	font-weight:bold;
+	color:#000;
+}
+ a:active{
+	font-weight:bold;
+	text-decoration:none;
+	color:#000;
+}
+ a:hover {
+	font-weight:bold;
+	text-decoration:underline;
+	color:#000;
+}
+ a:visited{
+	text-decoration:none;
+	font-weight:bold;
+}
+
+div#package{
+	margin-top:80px;
+	text-align:center;
+}
+div#package p{
+	margin-top: 20px;
+}
+div#main{
+	width: 1100px;margin:0 auto;padding: 0px;
+	margin-top:70px;
+}
+
+div#main #description p{
+	text-align:justify;
+}
+div#main .details h4{
+	margin-top:40px;
+	margin-bottom:10px;
+	padding:0;
+}
+
+div#main .details p{
+
+}
+ul li {
+	list-style-type:square;
+}
+
+footer{
+	margin-top:110px;
+	text-align:center
+}
+code{
+	font-family: monospace;
+}
+blockquote {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+table{
+	margin: 20px auto;
+	border-collapse: collapse;
+	width: 80%;
+}
+td,th{
+	border: 1px solid black;
+	padding: 3px;
+}
+td{
+	text-align:right;
+}
+td.geneid{
+	text-align: left;
+}

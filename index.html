@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+		<meta name="ProgId" content="FrontPage.Editor.Document">
+		<meta name="author" content="C.J. Liu">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="robots" content="all">
+		
+		<meta HTTP-EQUIV="Content-Type" content="text/html; charset=utf-8">
+		<title>SEGtool</title>
+		<!---<link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css"></link>--->
+		<link media="all" type="text/css" rel="stylesheet" href="main.css">
+		
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushCSharp.js"></script>
+
+	<link type="text/css" rel="stylesheet" href="styles/shCore.css"/>
+	<link type="text/css" rel="stylesheet" href="styles/shThemeDefault.css"/>
+	<script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = 'scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+	</head>
+	<body>
+		<header>
+			<div id='package'>
+				<h1 >SEGtool</h1>
+				<p>An R Package For Specifically Expressed Gene Detection</p>
+				<p>Zhang Qiong</p>
+				<p>Email: zhangqiong@hust.edu.cn</p>
+				<p>College of Life Science and Technology, HUST, Wuhan,China</p>
+			</div>
+		</header>
+
+		<div id="main">
+			<section id="description">
+				<p>SEGtool is an R package used for expression datasets analysis in purpose to detect specifically expressed gene (SEG, also known as tissue specific gene). SEGs are essentially outliers in a given condition(or different treatments, tissues). In order to detect such outliers, SEGtool first calculates the one-step Tukey-biweight value for each gene, applied a modified fuzzy c-means (FCM) clustering algorithm to cluster each gene respectively. After that, a modified Jaccard used to judge the most probable clustered ID for each sample. Finally we use a modified Simulated Annealing (SA) methods to detect candidate SEGs through analyzing the expression value of members in each group.</p>
+				<p>SEGtool could be used for :</p>
+                                <ul>
+                                        <li>High and low SEGs detection.</li>
+					<li>Specific expression patterns detection.</li>
+					<li>Detect extreme values in numeric-scale format.</li>
+                                </ul>
+
+			<section class="details">
+				<h4>Package and Manual Download</h4>
+				<dl>
+					<dt>EBI test expression dataset</dt><dd><a href="download/EBI_human_merged_tissue_expression.matrix.gz">EBI test expression dataset</a></dd>
+					<dt>GTEx test expression dataset</dt><dd><a href="download/GTEx_human_merged_tissue_expression.matrix.gz">GTEx test expression dataset</a></dd>
+					<dt>SEGtool R Package</dt><dd><a href="download/SEGtool_1.3.tar.gz">SEGtool_1.3.tar.gz</a></dd>
+					<dt>SEGtool Manual</dt><dd><a href="download/SEGtool_Manual.pdf">SEGtool_Manual.pdf</a></dd>
+				</dl>
+			</section>
+			
+			<section class="details">
+				<h4>System requirements</h4>
+				<p>This package can be used in UNIX/LINUX and was developed under R 3.1.1 on the ubuntu 12.04 operating system. The package on WINDOWS OS could not call multi-core cpu for speeding , and only perform on single core.</p>
+				<p>The memory occupation depends on the sample size of the input datasets. 170M, 220M, 336M memory and 4min, 5min, 8min were taken in an E7-4820 computer using 4 Cores while handling 39, 60 and 100 samples that all of them have 60533 genes (EBI test dataset, each cell is float with 4 significant figures). The GTEx dataset runs similar time but exhuast 1070M(expression in cell is float with 16 significant figures) memory with 31 tissues. Because of the time consumings,default option will not draw plot figure for each SEG's expression (or this it will spend a long time).</p>
+				<p> In order to implement our package, the R software and following R packages including :</p>
+				<p> <a href="https://cran.rstudio.com/src/contrib/ggplot2_2.0.0.tar.gz">ggplot2</a> (single gene expression plot figure needed) </p>
+				<p><a href="https://cran.rstudio.com/src/contrib/hwriterPlus_1.0-3.tar.gz">hwriterPlus</a> ( UNIX/LINUX html report needed )</p>
+				<p>parallel ( R contributed packages,UNIX/LINUX platform run multi-cpu required )</p>
+				<p><a href="https://cran.rstudio.com/src/contrib/pheatmap_1.0.8.tar.gz">pheatmap</a> ( heatmap needed)</p>
+				<p><a href="https://cran.rstudio.com/web/packages/RSvgDevice/index.html">svglite</a> ( html report needed )</p>
+				<p>All the packages required can be downloaded from <a href="https://cran.rstudio.com/">CRAN</a> or <a href="http://www.bioconductor.org/">BIoconductor</a> or click the hyperlinks above.</p>
+			</section>
+			<section class="details">
+				<h4>Procedures</h4>
+				<ul>
+					<li>Specific Expression Patterns Detection, using a Tukey-biweight modified fuzzy C-mean(FCM) clustering algorithm method</li>
+					<li>Principle Component Analysis (PCA) for the samples with SEGs</li>
+					<li>Cluster analysis for genes and samples</li>
+					<li>Represent SEGs in different samples</li>
+					<li>Plotting all the analysis results</li>
+					<li>Generate html report </li>
+				</ul>
+				<img src="content/SEGtool.png" alt="procedure"></img>
+			</section>
+
+                        <section class="details">
+                                <h4>Here is an example for demostrating how to use SEGtool in R environment </h4>
+                                <dl>
+                                        <dd><a href="demo.html" target="_blank">An simple example for SEGtool usage, click here</a></dd>
+                                </dl>
+                        </section>
+			
+			<section class="details">
+				<h4>Demo result Download</h4>
+				<p><a href="download/Demo_result.zip">Demo_result.zip</a></p>
+			</section>
+		</div>
+		
+		<footer>
+			<p >Copyright &copy;<a href="http://bioinfo.life.hust.edu.cn/" target=_blank> Guo Lab</a>,<a href="http://life.hust.edu.cn/" target=_blank>College of Life Science and Technology</a>,<a href="http://www.hust.edu.cn" target=_blank> HUST</a>,China</p>
+		</footer>
+	</body>
+</html>

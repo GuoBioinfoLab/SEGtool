@@ -1,0 +1,21 @@
+Package: SEGtool
+Title: detection specifically expressed gene in expression profile
+Version: 1.21
+Author: zhang qiong & liu chun jie
+Maintainer: zhang qiong <zhangqiong@hust.edu.cn>
+Date: 2016-01-20
+Depends: R (>= 3.1), parallel(>= 3.1.2),
+        Rcpp(>= 0.12.3), hwriterPlus (>= 1.0), ggplot2(>= 2.0.0),
+	pheatmap(>= 1.0.8),stringr(>= 1.0.0),svglite(>= 1.0.0) 
+Import: 
+Description: This package detect specifically expressed gene in 
+	expression profile. Such genes are significantly
+        up- or down-expressed in a small number of samples. This work 
+	performed by modified FCM Algorithm, modified jaccard coeffience,
+	and some criterias. expresson data can from different tissues, organs 
+	or any other sources that you wish to compare in expression profile.
+License: LGPL (>=2)
+biocViews: High-througt expression profile, Microarray, DifferentialExpression,
+	   MultipleComparison,Clustering, ReportWriting
+NeedsCompilation: no
+Packaged: 2016-01-19 18:50:30 UTC; biocbuild

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+		<meta name="ProgId" content="FrontPage.Editor.Document">
+		<meta name="author" content="C.J. Liu">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="robots" content="all">
+		
+		<meta HTTP-EQUIV="Content-Type" content="text/html; charset=utf-8">
+		<title>Demo usage for SEGtool</title>
+		<!---<link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css"></link>--->
+		<link media="all" type="text/css" rel="stylesheet" href="main.css">
+		
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushCSharp.js"></script>
+
+	<link type="text/css" rel="stylesheet" href="styles/shCore.css"/>
+	<link type="text/css" rel="stylesheet" href="styles/shThemeDefault.css"/>
+	<script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = 'scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+	</head>
+	<body>
+				<pre class="brush: c-sharp;">
+>library(SEGtool)
+>data(EbiHumanExpression)
+>SEGtool_result <- SEGtool (EbiHumanExpression, exp_cutoff = 3,multi_cpu = 4, detect_mod=2, result_outdir='SEGtool_result', draw_heatmap=FALSE, draw_pca=FALSE, draw_plot=FALSE, html_report=FALSE)
+</pre>
+				<p> The input format of dataset is as follow:</p>
+				<table>
+					<tr><th>GeneID</th><th>Adipose</th><th>Muscle</th><th>Heart</th><th>Ovary</th><th>Uterus</th></tr>
+					<tr><td class = "geneid">ENSG00000223972</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+					<tr><td class = "geneid">ENSG00000227232</td><td>5.8</td><td>6.7</td><td>6.0</td><td>2.9</td><td>10.4</td></tr>
+					<tr><td class = "geneid">ENSG00000243485</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+					<tr><td class = "geneid">ENSG00000237613</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+				</table>
+				<p> Part of result, the number 1 and -1 represents SEGs(1 is high, -1 means low)</p>
+				<table>
+					<tr><th>GeneID</th><th>Adipose</th><th>Muscle</th><th>Heart</th><th>Ovary</th><th>Uterus</th></tr>
+					<tr><td class = "geneid">ENSG00000223972</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+					<tr><td class = "geneid">ENSG00000227232</td><td>0</td><td>0</td><td>0</td><td>-1</td><td>1</td></tr>
+					<tr><td class = "geneid">ENSG00000243485</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+					<tr><td class = "geneid">ENSG00000237613</td><td>0</td><td>-1</td><td>0</td><td>0</td><td>0</td></tr>
+				</table>
+				<p> Part of result, p value information for SEGs</p>
+				<table>
+					<tr><th>GeneID</th><th>max_exp</th><th>SEG_p_value</th><th>max_SEG_p_value</th><th>p_number</th></tr>
+					<tr><td class = "geneid">ENSG00000204983</td><td>61264.99</td><td>Inf</td><td>Inf</td><td>1</td></tr>
+					<tr><td class = "geneid">ENSG00000115386</td><td>36461.64</td><td>Inf</td><td>Inf</td><td>1</td></tr>
+					<tr><td class = "geneid">ENSG00000091704</td><td>33834.74</td><td>Inf</td><td>Inf</td><td>1</td></tr>
+				</table>
+			</section>
+		<footer>
+			<p >Copyright &copy;<a href="http://bioinfo.life.hust.edu.cn/" target=_blank> Guo Lab</a>,<a href="http://life.hust.edu.cn/" target=_blank>College of Life Science and Technology</a>,<a href="http://www.hust.edu.cn" target=_blank> HUST</a>,China</p>
+		</footer>
+	</body>
+</html>
